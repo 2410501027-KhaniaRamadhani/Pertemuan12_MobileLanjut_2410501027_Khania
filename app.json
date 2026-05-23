@@ -1,29 +1,83 @@
 {
   "expo": {
     "name": "SocialApp",
-    "slug": "SocialApp",
+    "slug": "social-app",
     "version": "1.0.0",
+    "scheme": "socialapp",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "App ini butuh akses galeri untuk memilih foto profil dan postingan",
+        "NSCameraUsageDescription": "App ini butuh akses kamera untuk mengambil foto postingan",
+        "NSLocationWhenInUseUsageDescription": "App ini butuh lokasi untuk menampilkan peta dan teman di sekitar",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "App ini butuh lokasi untuk menampilkan peta"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "App ini butuh akses kamera untuk fitur foto dan story"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "App ini butuh akses galeri untuk memilih foto"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "App ini butuh lokasi untuk menampilkan peta dan teman sekitar"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#ffffff"
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "App ini butuh akses kontak untuk mencari teman"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "App ini butuh akses galeri untuk menyimpan foto",
+          "savePhotosPermission": "App ini ingin menyimpan foto ke galeri"
+        }
+      ]
+    ]
   }
 }

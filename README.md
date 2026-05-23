@@ -1,6 +1,6 @@
 Nama : Khania Ramadhani Fitri
 NIM  : 2410501027
-Kelas: A
+Kelas: B
 
 # SocialApp - Aplikasi Sosial Media (Tugas Mobile Lanjut)
 Ini adalah aplikasi sosial media sederhana yang saya buat untuk memenuhi 
